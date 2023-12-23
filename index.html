@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+    
+<div class="wage">
+      <p>Viết chương trình tính tiền lương cho nhân viên.</p>
+      <input id="number" type="number" placeholder="Nhập số ngày làm" />
+      <input
+        id="base"
+        type="number"
+        placeholder="Nhập lương 1 ngày làm"
+      />
+      <div class="btn">
+        <button type="button" onclick="tinhTien()">Tính lương</button>
+        <button type="button" onclick="location. reload()">Reset</button>
+      </div>
+
+      <div class="result">
+        <i class="fa fa-hand-point-right"></i>
+        <span id="result"></span>
+      </div>
+      
+    </div>
+
+
+
+<script src="./js/main.js"></script>
+</body>
+</html>
