@@ -7,6 +7,10 @@
 p{
     font-weight: 600;
 }
+p span{
+    color: brown;
+    font-weight: 800;
+}
 button{
     background: rgb(75 112 226);
     color: white;
@@ -35,3 +39,7 @@ margin: 5px;
 .result i, .arrayList i, .realList i{
     color: rgb(255 198 66);
 }
+.elementToggle{
+    display: none;
+}
+

@@ -1,5 +1,5 @@
 const numberArray = [];
-function displayNumber(id,array) {
+function displayNumber(id, array) {
   const arrElement = document.getElementById(id);
   arrElement.innerHTML = "";
   for (const number of array) {
@@ -12,7 +12,7 @@ function addNumberToArr() {
   let inputNumber = document.getElementById("number").value;
   if (!isNaN(inputNumber) && inputNumber !== "") {
     numberArray.push(Number(inputNumber));
-    displayNumber("arrayList",numberArray);
+    displayNumber("arrayList", numberArray);
   } else {
     alert("Vui lòng nhập vào 1 số");
   }
@@ -132,32 +132,60 @@ function addRealToArr() {
   let inputReal = document.getElementById("realNumber").value;
   if (!isNaN(inputReal) && inputReal !== "") {
     realArr.push(Number(inputReal));
-    displayNumber("realList",realArr);
+    displayNumber("realList", realArr);
   } else {
     alert("Vui lòng nhập vào 1 số");
   }
   //   clear input value
   document.getElementById("realNumber").value = "";
 }
-function countInt(){
+function countInt() {
   const intArr = realArr.filter((number) => Number.isInteger(number));
   const intAmount = intArr.length;
   document.getElementById("result9").innerHTML =
     "Số lượng số nguyên trong mảng là: " + intAmount;
 }
 // BÀI 10: So sánh số lượng số dương và số lượng số âm xem số nào nhiều hơn
-function getId(id,output){
-  document.getElementById(id).innerHTML=output;
+function getId(id, output) {
+  document.getElementById(id).innerHTML = output;
 }
 function compNumber() {
   const positive = numberArray.filter((num) => num > 0).length;
   const negative = numberArray.filter((num) => num < 0).length;
-  if (positive< negative) {
+  if (positive < negative) {
     // document.getElementById("result10").innerHTML="Số dương < Số âm";
-    getId("result10","Số dương < Số âm");
-  } else if (positive==negative){
+    getId("result10", "Số dương < Số âm");
+  } else if (positive == negative) {
     getId("result10", "Số dương = Số âm");
   } else {
     getId("result10", "Số dương > Số âm");
   }
 }
+
+function loomButton(idClick,idContent){
+  const toggleButton = document.getElementById(idClick);
+  const elementToggle = document.getElementById(idContent);
+  toggleButton.addEventListener("click", function () {
+    // Kiểm tra trạng thái hiện tại và đảo ngược nó
+    if (
+      elementToggle.style.display === "none" ||
+      elementToggle.style.display === ""
+    ) {
+      elementToggle.style.display = "block";
+    } else {
+      elementToggle.style.display = "none";
+    }
+  });
+}
+loomButton("toggleButton1","elementToggle1");
+loomButton("toggleButton2", "elementToggle2");
+loomButton("toggleButton3", "elementToggle3");
+loomButton("toggleButton4", "elementToggle4");
+loomButton("toggleButton5", "elementToggle5");
+loomButton("toggleButton6", "elementToggle6");
+loomButton("toggleButton7", "elementToggle7");
+loomButton("toggleButton8", "elementToggle8");
+loomButton("toggleButton9", "elementToggle9");
+loomButton("toggleButton10", "elementToggle10");
+
+

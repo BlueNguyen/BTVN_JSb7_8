@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exercise JS 7-8</title>
 
-<link
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
       integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
@@ -21,127 +21,171 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="./css/style.css">
-
-</head>
-<body>
-    
-<div class="container">
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="container">
       <h2>Tạo mảng các số nguyên</h2>
       <input id="number" type="number" placeholder="Nhập số n" />
-      <button onclick="addNumberToArr()">Thêm số </button>
+      <button onclick="addNumberToArr()">Thêm số</button>
       <button type="button" onclick="location. reload()">Reset</button>
       <div class="arrayList">
         <i class="fa fa-hand-point-right"></i>
         <span id="arrayList"></span>
       </div>
       <!-- BÀI 1 -->
-      <p>Bài 1: Viết chương trình tính tổng các số dương trong mảng.</p>
+      <p id="toggleButton1">
+        <span>Bài 1:</span> Viết chương trình tính tổng các số dương trong mảng.
+      </p>
 
-      <button type="button" onclick="getSum()">Tính tổng</button>
+      <div id="elementToggle1" class="elementToggle">
+        <button type="button" onclick="getSum()">Tính tổng</button>
 
-      <div class="result">
-        <i class="fa fa-hand-point-right"></i>
-        <span id="result1"></span>
+        <div class="result">
+          <i class="fa fa-hand-point-right"></i>
+          <span id="result1"></span>
+        </div>
       </div>
-<!-- BÀI 2 -->
-      <p>Bài 2: Viết chương trình đếm xem có bao nhiêu số dương trong mảng.</p>
 
-      <button type="button" onclick="countNumber()">Đếm số</button>
+      <!-- BÀI 2 -->
+      <p id="toggleButton2">
+        <span>Bài 2: </span> Viết chương trình đếm xem có bao nhiêu số dương
+        trong mảng.
+      </p>
 
-      <div class="result">
-        <i class="fa fa-hand-point-right"></i>
-        <span id="result2"></span>
+      <div id="elementToggle2" class="elementToggle">
+        <button type="button" onclick="countNumber()">Đếm số</button>
+
+        <div class="result">
+          <i class="fa fa-hand-point-right"></i>
+          <span id="result2"></span>
+        </div>
       </div>
-<!-- BÀI 3 -->
-      <p>Bài 3: Viết chương trình tìm số nhỏ nhất trong mảng.</p>
+      <!-- BÀI 3 -->
+      <p id="toggleButton3">
+        <span>Bài 3: </span> Viết chương trình tìm số nhỏ nhất trong mảng.
+      </p>
+      <div id="elementToggle3" class="elementToggle">
+        <button type="button" onclick="findMinNumber()">Tìm số nhỏ nhất</button>
 
-      <button type="button" onclick="findMinNumber()">Tìm số nhỏ nhất</button>
-
-      <div class="result">
-        <i class="fa fa-hand-point-right"></i>
-        <span id="result3"></span>
+        <div class="result">
+          <i class="fa fa-hand-point-right"></i>
+          <span id="result3"></span>
+        </div>
       </div>
-<!-- BÀI 4 -->
-      <p>Bài 4: Viết chương trình tìm số dương nhỏ nhất trong mảng.</p>
 
-      <button type="button" onclick="findMinPos()">Tìm số dương nhỏ nhất</button>
+      <!-- BÀI 4 -->
+      <p id="toggleButton4">
+        <span>Bài 4: </span> Viết chương trình tìm số dương nhỏ nhất trong mảng.
+      </p>
+      <div id="elementToggle4" class="elementToggle">
+        <button type="button" onclick="findMinPos()">
+          Tìm số dương nhỏ nhất
+        </button>
 
-      <div class="result">
-        <i class="fa fa-hand-point-right"></i>
-        <span id="result4"></span>
+        <div class="result">
+          <i class="fa fa-hand-point-right"></i>
+          <span id="result4"></span>
+        </div>
       </div>
-<!-- BÀI 5 -->
-      <p>Bài 5: Viết chương trình tìm số chẵn cuối cùng trong mảng.</p>
+      <!-- BÀI 5 -->
+      <p id="toggleButton5">
+        <span>Bài 5: </span> Viết chương trình tìm số chẵn cuối cùng trong mảng.
+      </p>
+      <div id="elementToggle5" class="elementToggle">
+        <button type="button" onclick="findEvenNumber()">
+          Tìm số chẵn cuối cùng
+        </button>
 
-      <button type="button" onclick="findEvenNumber()">Tìm số chẵn cuối cùng</button>
-
-      <div class="result">
-        <i class="fa fa-hand-point-right"></i>
-        <span id="result5"></span>
+        <div class="result">
+          <i class="fa fa-hand-point-right"></i>
+          <span id="result5"></span>
+        </div>
       </div>
       <!-- BÀI 6 -->
-      <p>Bài 6: Viết chương trình đổi chỗ 2 giá trị trong mảng theo vị trí.</p>
-      <input type="number" placeholder="Nhập số vị trí 1" id="pos1input">
-      <input type="number" placeholder="Nhập số vị trí 2" id="pos2input">
+      <p id="toggleButton6">
+        <span>Bài 6: </span> Viết chương trình đổi chỗ 2 giá trị trong mảng theo
+        vị trí.
+      </p>
+      <div id="elementToggle6" class="elementToggle">
+        <input type="number" placeholder="Nhập số vị trí 1" id="pos1input" />
+        <input type="number" placeholder="Nhập số vị trí 2" id="pos2input" />
 
-      <button class="bai6" type="button" onclick="changePos()">Đổi chỗ</button>
+        <button class="bai6" type="button" onclick="changePos()">
+          Đổi chỗ
+        </button>
 
-      <div class="result">
-        <i class="fa fa-hand-point-right"></i>
-        <span id="result6"></span>
+        <div class="result">
+          <i class="fa fa-hand-point-right"></i>
+          <span id="result6"></span>
+        </div>
       </div>
-<!-- BÀI 7 -->
-<p>Bài 7: Viết chương trình sắp xếp mảng theo thứ tự tăng dần.</p>
+      <!-- BÀI 7 -->
+      <p id="toggleButton7">
+        <span>Bài 7: </span> Viết chương trình sắp xếp mảng theo thứ tự tăng
+        dần.
+      </p>
+      <div id="elementToggle7" class="elementToggle">
+        <button type="button" onclick="arrangeArr()">Sắp xếp</button>
 
-      <button type="button" onclick="arrangeArr()">Sắp xếp</button>
-
-      <div class="result">
-        <i class="fa fa-hand-point-right"></i>
-        <span id="result7"></span>
+        <div class="result">
+          <i class="fa fa-hand-point-right"></i>
+          <span id="result7"></span>
+        </div>
       </div>
+
       <!-- BÀI 8 -->
-      <p>Bài 8: Viết chương trình tìm số nguyên tố đầu tiên trong mảng.</p>
+      <p id="toggleButton8">
+        <span>Bài 8: </span> Viết chương trình tìm số nguyên tố đầu tiên trong
+        mảng.
+      </p>
+      <div id="elementToggle8" class="elementToggle">
+        <button type="button" onclick="findPrimeNumber()">
+          Tìm số nguyên tố
+        </button>
 
-      <button type="button" onclick="findPrimeNumber()">Tìm số nguyên tố</button>
-
-      <div class="result">
-        <i class="fa fa-hand-point-right"></i>
-        <span id="result8"></span>
+        <div class="result">
+          <i class="fa fa-hand-point-right"></i>
+          <span id="result8"></span>
+        </div>
       </div>
       <!-- BÀI 9 -->
-      <p>Bài 9: Viết chương trình nhập thêm 1 mảng số thực, tìm xem trong mảng có bao nhiêu số nguyên</p>
+      <p id="toggleButton9">
+        <span>Bài 9: </span> Viết chương trình nhập thêm 1 mảng số thực, tìm xem
+        trong mảng có bao nhiêu số nguyên
+      </p>
+      <div id="elementToggle9" class="elementToggle">
+        <p>Tạo mảng các số thực</p>
+        <input id="realNumber" type="number" placeholder="Nhập số n" />
+        <button onclick="addRealToArr()">Thêm số</button>
+        <button type="button" onclick="location. reload()">Reset</button>
+        <div class="realList">
+          <i class="fa fa-hand-point-right"></i>
+          <span id="realList"></span>
+        </div>
 
-      <p>Tạo mảng các số thực</p>
-      <input id="realNumber" type="number" placeholder="Nhập số n" />
-      <button onclick="addRealToArr()">Thêm số </button>
-      <button type="button" onclick="location. reload()">Reset</button>
-      <div class="realList">
-        <i class="fa fa-hand-point-right"></i>
-        <span id="realList"></span>
-      </div>
+        <button type="button" onclick="countInt()">Đếm số nguyên</button>
 
-      <button type="button" onclick="countInt()">Đếm số nguyên</button>
-
-      <div class="result">
-        <i class="fa fa-hand-point-right"></i>
-        <span id="result9"></span>
+        <div class="result">
+          <i class="fa fa-hand-point-right"></i>
+          <span id="result9"></span>
+        </div>
       </div>
       <!-- BÀI 10 -->
-      <p>Bài 10: Viết chương trình so sánh số lượng số dương và số lượng số âm xem số nào nhiều hơn.</p>
+      <p id="toggleButton10">
+        <span>Bài 10: </span> Viết chương trình so sánh số lượng số dương và số
+        lượng số âm xem số nào nhiều hơn.
+      </p>
+      <div id="elementToggle10" class="elementToggle">
+        <button type="button" onclick="compNumber()">So sánh</button>
 
-      <button type="button" onclick="compNumber()">So sánh</button>
-
-      <div class="result">
-        <i class="fa fa-hand-point-right"></i>
-        <span id="result10"></span>
+        <div class="result">
+          <i class="fa fa-hand-point-right"></i>
+          <span id="result10"></span>
+        </div>
       </div>
-
-
     </div>
 
-
-
-<script src="./js/main.js"></script>
-</body>
+    <script src="./js/main.js"></script>
+  </body>
 </html>
